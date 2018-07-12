@@ -1,0 +1,8 @@
+echo "Creating the databases..."
+MYSQL_PWD=$MYSQL_ROOT_PASSWORD mysql -u root -e "CREATE DATABASE pocket DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_bin;"
+MYSQL_PWD=$MYSQL_ROOT_PASSWORD mysql -u root -e "CREATE DATABASE worth DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_bin;"
+MYSQL_PWD=$MYSQL_ROOT_PASSWORD mysql -u root -e "CREATE DATABASE lolsight DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_bin;"
+echo "Creating 'jpe'..."
+MYSQL_PWD=$MYSQL_ROOT_PASSWORD mysql -u root -e "CREATE USER 'jpe'@'%' IDENTIFIED BY 'jpe';"
+echo "Setting permissions for 'jpe'..."
+MYSQL_PWD=$MYSQL_ROOT_PASSWORD mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'jpe'@'%' WITH GRANT OPTION;"

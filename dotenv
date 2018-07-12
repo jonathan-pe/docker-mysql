@@ -1,0 +1,5 @@
+DB_NAME=pocket
+DB_USER=jpe
+DB_PASSWORD=jpe
+DB_HOST=localhost
+
